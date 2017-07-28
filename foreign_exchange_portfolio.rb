@@ -23,12 +23,12 @@ quant_dollars = STDIN.gets.to_f
 puts 'Введите кол-во рублей у вас на руках'
 quant_rubles = STDIN.gets.to_f
 
-disbalance = ((quant_dollars * exchange_rate) - quant_rubles)
+disbalance = (((quant_dollars * exchange_rate) - quant_rubles) / 2).round(2)
 
-if disbalance.abs.round(2) < exchange_rate
+if disbalance.abs < exchange_rate
   puts 'Ваш портфель сбалансирован'
 elsif disbalance > 0
-  abort "Вам нужно продать #{(disbalance / 2 / exchange_rate).round(2)} долларов"
+  puts "Вам нужно продать #{disbalance} рублей"
 else
-  abort "Вам нужно продать #{(disbalance.abs / 2).round(2)} рублей"
+  puts "Вам нужно купить #{disbalance.abs} рублей"
 end
