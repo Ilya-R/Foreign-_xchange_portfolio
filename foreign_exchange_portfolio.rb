@@ -28,7 +28,7 @@ disbalance = (((quant_dollars * exchange_rate) - quant_rubles) / 2).round(2)
 if disbalance.abs < exchange_rate
   puts 'Ваш портфель сбалансирован'
 elsif disbalance > 0
-  puts "Вам нужно продать #{disbalance} рублей"
+  puts "Вам нужно купить #{disbalance} рублей"
 else
-  puts "Вам нужно купить #{disbalance.abs} рублей"
+  puts "Вам нужно продать #{disbalance.abs} рублей"
 end
